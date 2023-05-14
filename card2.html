@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Design 2</title>
+    <link rel="stylesheet" href="./Profile-card2.css" />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="detail">
+          <h2><span id="firstName"></span> <span id="lastName"></span></h2>
+          <ul class="sci">
+            <li>
+              <a href="#" id="email"><i class="fa fa-envelope-o"></i></a>
+            </li>
+            <li>
+              <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#" id="github"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+              <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const firstName = sessionStorage.getItem("firstName");
+      const lastName = sessionStorage.getItem("lastName");
+      const email = sessionStorage.getItem("email");
+      const linkedin = sessionStorage.getItem("linkedin");
+      const github = sessionStorage.getItem("github");
+      const twitter = sessionStorage.getItem("twitter");
+      
+      document.getElementById("firstName").innerHTML = firstName;
+      document.getElementById("lastName").innerHTML = lastName;
+      document.getElementById("email").href = "mailto:" + email;
+      document.getElementById("linkedin").href = linkedin;
+      document.getElementById("github").href = github;
+      document.getElementById("twitter").href = twitter;
+    </script>
+  </body>
+</html>

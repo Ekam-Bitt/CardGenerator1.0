@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+    />
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <form id="form">
+      <h2>Fill-Up Details</h2>
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="url" id="linkedin" placeholder="LinkedIn URL" required />
+      <input type="url" id="github" placeholder="GitHub URL" required />
+      <input type="url" id="twitter" placeholder="Twitter URL" required />
+      <input type="submit" id="submit" value="Generate Card" />
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      const firstName = document.getElementById("firstName");
+      const lastName = document.getElementById("lastName");
+      const email = document.getElementById("email");
+      const linkedin = document.getElementById("linkedin");
+      const github = document.getElementById("github");
+      const twitter = document.getElementById("twitter");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const firstNameValue = firstName.value;
+        const lastNameValue = lastName.value;
+        const emailValue = email.value;
+        const linkedinValue = linkedin.value;
+        const githubValue = github.value;
+        const twitterValue = twitter.value;
+
+        sessionStorage.setItem("firstName", firstNameValue);
+        sessionStorage.setItem("lastName", lastNameValue);
+        sessionStorage.setItem("email", emailValue);
+        sessionStorage.setItem("linkedin", linkedinValue);
+        sessionStorage.setItem("github", githubValue);
+        sessionStorage.setItem("twitter", twitterValue);
+
+        window.location.href = "card2.html";
+      });
+    </script>
+  </body>
+</html>
